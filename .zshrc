@@ -1,7 +1,7 @@
 # --- OH-MY-ZSH SETUP ---
 export ZSH="$HOME/.oh-my-zsh"
 
-# zsh theme from oh-my-zsh
+# zsh theme
 ZSH_THEME="agnoster"
 
 # Plugins
