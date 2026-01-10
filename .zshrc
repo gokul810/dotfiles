@@ -1,11 +1,10 @@
 # --- OH-MY-ZSH SETUP ---
 export ZSH="$HOME/.oh-my-zsh"
 
-# Batman/Tokyo Night Style Prompt
-# 'robbyrussell' is solid, but 'agnoster' is also great for Nerd Fonts
+# zsh theme from oh-my-zsh
 ZSH_THEME="agnoster"
 
-# Plugins (Added zsh-autosuggestions if you decide to install it later)
+# Plugins
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
@@ -14,14 +13,14 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nano'
 export LANG=en_US.UTF-8
 
-# --- BATMAN ALIASES ---
+# --- CUSTOM ALIASES ---
 
 # Navigationsince color scheme is embedded into the terminal
 alias ..='cd ..'
 alias ...='cd ../..'
 alias c='clear'
 
-# Better LS (Batman Colors)
+# Better LS (With Colors)
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias la='ls -A'
