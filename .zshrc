@@ -1,0 +1,46 @@
+# --- OH-MY-ZSH SETUP ---
+export ZSH="$HOME/.oh-my-zsh"
+
+# Batman/Tokyo Night Style Prompt
+# 'robbyrussell' is solid, but 'agnoster' is also great for Nerd Fonts
+ZSH_THEME="agnoster"
+
+# Plugins (Added zsh-autosuggestions if you decide to install it later)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+
+source $ZSH/oh-my-zsh.sh
+
+# --- USER PREFERENCES ---
+export EDITOR='nano'
+export LANG=en_US.UTF-8
+
+# --- BATMAN ALIASES ---
+
+# Navigationsince color scheme is embedded into the terminal
+alias ..='cd ..'
+alias ...='cd ../..'
+alias c='clear'
+
+# Better LS (Batman Colors)
+alias ls='ls --color=auto'
+alias ll='ls -lh'
+alias la='ls -A'
+
+# Config Shortcuts
+alias zshconf="kwrite ~/.zshrc"
+alias alaconf="kwrite ~/.config/alacritty/alacritty.toml"
+
+# Safety
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+
+# Syntax Highlighting
+ZSH_HIGHLIGHT_STYLES[command]='fg=#7aa2f7,bold'
+ZSH_HIGHLIGHT_STYLES[alias]='fg=#bb9af7,bold'
+
+# --- STARTUP ---
+# Run fastfetch if installed to show that Arch logo on launch
+#if command -v fastfetch &> /dev/null; then
+#    fastfetch
+#fi

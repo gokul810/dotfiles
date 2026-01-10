@@ -1,0 +1,17 @@
+ABYSS-X SETUP INFO
+
+1. REQUIRED FONTS
+Package: ttf-jetbrains-mono-nerd
+Install: sudo pacman -S ttf-jetbrains-mono-nerd
+
+2. ZSH PLUGINS
+Must be cloned before loading .zshrc:
+
+Syntax Highlighting:
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+Auto-Suggestions:
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+3. CORE APPS
+Install: sudo pacman -S alacritty zsh fastfetch
