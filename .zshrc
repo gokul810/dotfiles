@@ -10,12 +10,13 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # --- USER PREFERENCES ---
+
 export EDITOR='nano'
 export LANG=en_US.UTF-8
 
 # --- CUSTOM ALIASES ---
 
-# Navigationsince color scheme is embedded into the terminal
+# Navigation since color scheme is embedded into the terminal
 alias ..='cd ..'
 alias ...='cd ../..'
 alias c='clear'
