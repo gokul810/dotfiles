@@ -1,0 +1,45 @@
+[global]
+    ### Display ###
+    monitor = 0
+    follow = mouse
+    width = (0, 300)
+    height = (0, 200)
+    origin = top-right
+    offset = (20, 20)
+    
+    ### Aesthetics ###
+    # 0.5 transparency is '80' in hex (128/255)
+    background = "#00000080"
+    foreground = "#ffffff"
+    frame_color = "#ffffff"
+    frame_width = 1
+    corner_radius = 12
+    
+    # Fonts and Padding
+    font = Sans 10
+    padding = 12
+    horizontal_padding = 12
+    separator_color = frame
+    
+    ### Progress & Icons ###
+    progress_bar = false
+    icon_position = left
+    max_icon_size = 64
+    
+    ### Behavior ###
+    transparency = 0
+    separator_height = 2
+    idle_threshold = 120
+    alignment = left
+    show_age_threshold = 60
+    word_wrap = yes
+
+[urgency_low]
+    timeout = 5
+
+[urgency_normal]
+    timeout = 10
+
+[urgency_critical]
+    frame_color = "#ff5555"
+    timeout = 0
