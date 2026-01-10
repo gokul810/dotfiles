@@ -1,5 +1,7 @@
 ABYSS-X SETUP INFO
 
+- need Oh-My-Zsh -
+
 1. REQUIRED FONTS
 Package: ttf-jetbrains-mono-nerd
 Install: sudo pacman -S ttf-jetbrains-mono-nerd
