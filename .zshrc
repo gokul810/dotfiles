@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # zsh theme
-ZSH_THEME="agnoster"
+ZSH_THEME="cloud"
 
 # Plugins
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
