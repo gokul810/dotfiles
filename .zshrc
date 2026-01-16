@@ -27,8 +27,8 @@ alias ll='ls -lh'
 alias la='ls -A'
 
 # Config Shortcuts
-alias zshconf="kwrite ~/.zshrc"
-alias alaconf="kwrite ~/.config/alacritty/alacritty.toml"
+alias zshconf="gedit ~/.zshrc"
+alias alaconf="gedit ~/.config/alacritty/alacritty.toml"
 
 # Safety
 alias rm="rm -i"
