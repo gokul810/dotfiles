@@ -4,8 +4,7 @@
   "spacing" : 0,
   "modules-left": [
   "hyprland/workspaces",
-  "custom/uptime",
-  "cpu"
+  "custom/uptime"
   ],
 
   "modules-center": [
@@ -22,22 +21,23 @@
   ],
 
   "hyprland/workspaces": {
-    "format": "{name}", // {icon} for icon's
+    "format": "{name}",
+    "on-click": "activate",
     "format-icons": {
       "active": "",
       "default": ""
     },
     "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5]
+      "*": [1, 2, 3, 4, 5, 6]
     }
   },
 
   "bluetooth": {
-    "format": "󰂲",
-    "format-on": "{icon}",
-    "format-off": "{icon}", 
-    "format-connected":"{icon}",
-    "format-connected-battery": "",
+    "format": "󰂲 Off",
+    "format-on": "{icon} On",
+    "format-off": "{icon} Off", 
+    "format-connected":"{icon} {device_alias}",
+    "format-connected-battery": "  {device_alias} {device_battery_percentage}%",
     "format-icons":{
         "on":"󰂯",
         "off": "󰂲",
@@ -66,21 +66,14 @@
   },
 
   "network": {
-    "format-wifi": "󰤢",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤠 ",
+    "format-wifi": "󰤢  {essid}",
+    "format-ethernet": "󰈀  {ifname}",
+    "format-disconnected": "󰤠  Disconnected",
     "interval": 5,
     "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "kitty --class 'network-float' -e nmtui"
+    "on-click": "alacritty --class 'network-float' -e nmtui"
 
  },
-
-  "cpu": {
-    "interval": 1,
-    "format": "  {icon} {usage:>2}%",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
-    "on-click": "kitty -e htop"
-  },
 
   "memory": {
     "interval": 30,
@@ -97,15 +90,15 @@
   },
   
   "backlight": {
-        "format": "{icon}",
+        "format": "{icon} {percent}%",
         "format-icons": ["","󰃜", "󰃛", "󰃞","󰃝","󰃟","󰃠"],
         "tooltip": true,
         "tooltip-format": "Brightness: {percent}%"
   },
   
   "pulseaudio": {
-    "format": "{icon}",
-    "format-muted": "",
+    "format": "{icon} {volume}%",
+    "format-muted": "  Muted",
     "format-icons": {
       "default": ["", "", " "]
     },
@@ -123,9 +116,9 @@
         "tooltip": true,
         "tooltip-format": "Battery: {capacity}%",
 
-        "format": "{icon}",
-        "format-full": "{icon}",
-        "format-charging": "󰂄",
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} Full",
+        "format-charging": "󰂄 {capacity}%",
         "format-plugged": "󰂄 ",
         "format-alt": "{icon} {time}",
         // "format-good": "", // An empty format will hide the module
