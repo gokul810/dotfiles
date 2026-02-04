@@ -61,7 +61,7 @@
   "clock": {
     "timezone": "Asia/Kolkata",
     "tooltip": false,
-    "format": "{:%H:%M - %A, %d}",
+    "format": "{:%I:%M %p - %A, %d}",
     "interval": 1
   },
 
