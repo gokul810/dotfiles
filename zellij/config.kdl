@@ -1,7 +1,7 @@
 // --- KEYBINDINGS ---
 keybinds {
     normal {
-        // Normal mode is where you spend most of your time
+        
     }
 
     shared_except "locked" {
@@ -36,10 +36,10 @@ show_release_notes false
 default_layout "compact"
 
 // --- BEHAVIOR ---
-on_force_close "detach" // Session stays running if you close Alacritty
+on_force_close "detach" // Session stays running if Alacritty is closed
 scroll_buffer_size 10000
 serialization_interval 10000
-session_serialization true // Remembers your layout after a reboot
+session_serialization true // Remembers layout after a reboot
 
 // --- PLUGINS ---
 plugins {
