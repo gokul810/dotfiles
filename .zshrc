@@ -1,6 +1,4 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -27,6 +25,7 @@ export LANG=en_US.UTF-8
 alias ..='cd ..'
 alias ...='cd ../..'
 alias c='clear'
+alias x='exit'
 
 # Better LS (With Colors)
 alias ls='ls --color=auto'
@@ -42,18 +41,44 @@ alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
 
-# Bat alias
-alias bat='batcat'
+# Btop alias
+alias m="btop"
 
-# Syntax Highlighting
+# --- ZELLIJ WORKFLOW ---
+
+# Quick Shortcuts
+alias zj="zellij"
+alias zjl="zellij list-sessions"
+alias zjn="zellij -s"
+alias zjk="zellij kill-session"
+alias zjka="zellij kill-all-sessions"
+alias zjd="zellij delete-session"
+alias zjda="zellij delete-all-sessions"
+
+# Tries to attach to a session, If the session doesn't exist, it creates it.
+za() {
+    if [ -z "$1" ]; then
+        zellij list-sessions
+    else
+        zellij attach "$1" || zellij --session "$1"
+    fi
+}
+
+# Syntax Highlighting for ZSH
 ZSH_HIGHLIGHT_STYLES[command]='fg=#7aa2f7,bold'
 ZSH_HIGHLIGHT_STYLES[alias]='fg=#bb9af7,bold'
 
-# --- STARTUP ---
-# Run fastfetch if installed to show that Arch logo on launch
-#if command -v fastfetch &> /dev/null; then
-#    fastfetch
-#fi
+# --- OTHERS ---
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# fnm
+FNM_PATH="/home/gokul/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "`fnm env`"
+fi
+
+# opencode
+export PATH=/home/gokul/.opencode/bin:$PATH
