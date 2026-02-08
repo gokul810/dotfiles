@@ -72,13 +72,3 @@ ZSH_HIGHLIGHT_STYLES[alias]='fg=#bb9af7,bold'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# fnm
-FNM_PATH="/home/gokul/.local/share/fnm"
-if [ -d "$FNM_PATH" ]; then
-  export PATH="$FNM_PATH:$PATH"
-  eval "`fnm env`"
-fi
-
-# opencode
-export PATH=/home/gokul/.opencode/bin:$PATH
