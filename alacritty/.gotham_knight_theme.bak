@@ -1,0 +1,27 @@
+[colors.primary]
+background = "#101012" # Almost pitch black (The Batsuit)
+foreground = "#c0caf5" # Tokyo Night silver-blue text
+
+[colors.cursor]
+text = "#101012"
+cursor = "#7aa2f7" # Electric blue "Eyes"
+
+[colors.normal]
+black   = "#15161e"
+red     = "#f7768e" # Gotham neon red
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7" # Bat-computer blue
+magenta = "#bb9af7" # Dark purple/violet
+cyan    = "#7dcfff"
+white   = "#a9b1d6"
+
+[colors.bright]
+black   = "#414868"
+red     = "#ff7a93"
+green   = "#b9f27c"
+yellow  = "#ff9e64"
+blue    = "#7da6ff"
+magenta = "#bb9af7"
+cyan    = "#0db9d7"
+white   = "#c0caf5"
