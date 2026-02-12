@@ -1,4 +1,5 @@
 # inspired by tokyo night and batman fr
+
 [colors.primary]
 background = "#101012" # Almost pitch black (The Batsuit)
 foreground = "#c0caf5" # Tokyo Night silver-blue text
