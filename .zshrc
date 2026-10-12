@@ -1,13 +1,8 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # --- OH-MY-ZSH SETUP ---
 export ZSH="$HOME/.oh-my-zsh"
 
 # zsh theme
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="gozilla"
 
 # Plugins
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
@@ -28,9 +23,11 @@ alias c='clear'
 alias x='exit'
 
 # Better LS (With Colors)
-alias ls='ls --color=auto'
-alias ll='ls -lh'
-alias la='ls -A'
+alias ls='eza --icons=auto'
+alias ll='eza -lh --icons=auto'
+alias la='eza -a --icons=auto'
+alias lla='eza -lha --icons=auto'
+alias lt='eza --tree --icons=auto'
 
 # Config Shortcuts
 alias zshconf="nano ~/.zshrc"
@@ -43,6 +40,9 @@ alias mv="mv -i"
 
 # Btop alias
 alias m="btop"
+
+# OpenCode
+alias oc="opencode"
 
 # --- ZELLIJ WORKFLOW ---
 
@@ -65,10 +65,36 @@ za() {
 }
 
 # Syntax Highlighting for ZSH
-ZSH_HIGHLIGHT_STYLES[command]='fg=#7aa2f7,bold'
-ZSH_HIGHLIGHT_STYLES[alias]='fg=#bb9af7,bold'
+ZSH_HIGHLIGHT_STYLES[command]='bold'
+ZSH_HIGHLIGHT_STYLES[alias]='bold'
 
 # --- OTHERS ---
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# fnm
+FNM_PATH="/home/gokul/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --shell zsh)"
+fi
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/gokul/.local/bin:$PATH"
+
+
+# Android SDK
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+
+# flutter
+export PATH=$PATH:$HOME/dev/flutter/bin
+
+# bun completions
+[ -s "/home/gokul/.bun/_bun" ] && source "/home/gokul/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
